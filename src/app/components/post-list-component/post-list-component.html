@@ -1,1 +1,39 @@
-<p>post-list-component works!</p>
+<div class="container">
+  @if (posts().length === 0) {
+  <div class="spinner-border" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+  } @else {
+  <div style="max-height: 400px; overflow-y: scroll">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Title</th>
+          <th scope="col">Description</th>
+          <th scope="col">UserID</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (post of posts(); track post.id) {
+        <tr>
+          <td class="align-middle">{{ post?.id }}</td>
+          <td class="align-middle">{{ post?.title }}</td>
+          <td class="align-middle">{{ post?.body }}</td>
+          <td class="align-middle">{{ post?.userId }}</td>
+          <td class="align-middle">
+            <div style="display: flex; gap: 8px">
+              <button class="btn btn-primary">View</button>
+              <button class="btn btn-warning">Edit</button>
+              <button class="btn btn-danger">Delete</button>
+            </div>
+          </td>
+        </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+
+  }
+</div>

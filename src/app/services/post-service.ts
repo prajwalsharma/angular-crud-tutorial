@@ -7,10 +7,10 @@ import { IPost } from '../models/ipost';
 })
 export class PostService {
   private readonly http = inject(HttpClient);
-  private readonly apiUrl = 'https://jsonplaceholder.typicode.com;';
+  private readonly apiUrl = 'https://jsonplaceholder.typicode.com';
 
   getAllPosts = () => {
-    return this.http.get<IPost[]>(this.apiUrl + 'posts');
+    return this.http.get<IPost[]>(`${this.apiUrl}/posts`);
   };
 
   getPost = (postId: number) => {
