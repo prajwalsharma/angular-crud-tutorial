@@ -1,0 +1,7 @@
+@if (post() === null) {
+<app-loader-component />
+} @else if(post() !== null) {
+<p><b>Post ID:</b> {{ postId() }}</p>
+<p><b>Title:</b> {{ post()?.title }}</p>
+<p><b>Description:</b> {{ post()?.body }}</p>
+}
