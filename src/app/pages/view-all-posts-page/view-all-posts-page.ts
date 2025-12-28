@@ -2,9 +2,9 @@ import { Component } from '@angular/core';
 import { PostListComponent } from '../../components/post-list-component/post-list-component';
 
 @Component({
-  selector: 'app-home-component',
+  selector: 'app-view-all-posts-page',
   imports: [PostListComponent],
-  templateUrl: './home-component.html',
-  styleUrl: './home-component.css',
+  templateUrl: './view-all-posts-page.html',
+  styleUrl: './view-all-posts-page.css',
 })
-export class HomeComponent {}
+export class ViewAllPostsPage {}

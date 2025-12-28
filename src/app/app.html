@@ -1,1 +1,15 @@
-<app-home-component /> <router-outlet />
+<nav class="navbar bg-body-tertiary shadow-sm" style="max-height: 56px">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="/">Angular CRUD App</a>
+    <div class="d-flex gap-2">
+      <button class="btn btn-primary" routerLink="/posts/create">+ Create Post</button>
+      <button class="btn btn-warning" routerLink="/posts">View Posts</button>
+    </div>
+  </div>
+</nav>
+
+<div
+  style="display: flex; align-items: center; justify-content: center; height: calc(100vh - 56px)"
+>
+  <router-outlet />
+</div>
