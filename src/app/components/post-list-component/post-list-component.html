@@ -23,7 +23,9 @@
           <td class="align-middle">
             <div style="display: flex; gap: 8px">
               <button class="btn btn-primary" [routerLink]="['/posts', post?.id]">View</button>
-              <button class="btn btn-warning">Edit</button>
+              <button class="btn btn-warning" [routerLink]="['/posts', post?.id, 'edit']">
+                Edit
+              </button>
               <button class="btn btn-danger">Delete</button>
             </div>
           </td>

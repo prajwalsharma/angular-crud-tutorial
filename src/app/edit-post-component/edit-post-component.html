@@ -1,0 +1,24 @@
+@if (post() === null) {
+<app-loader-component />
+} @else if(post() !== null) {
+<form [formGroup]="editPostForm" (ngSubmit)="onSubmit()">
+  <div class="mb-3">
+    <label for="post-title" class="form-label">Title:</label>
+    <input id="post-title" class="form-control" formControlName="title" />
+  </div>
+  <div class="mb-3">
+    <label for="post-body" class="form-label">Description:</label>
+    <textarea id="post-body" class="form-control" formControlName="body"></textarea>
+  </div>
+  <div style="display: flex; justify-content: center">
+    <button type="submit" class="btn btn-primary" [disabled]="isFormSubmitting()">
+      @if (isFormSubmitting()) {
+      <span class="spinner-border spinner-border-sm me-2" aria-hidden="true"></span>
+      <span role="status">Submitting...</span>
+      } @else {
+      <span>Update</span>
+      }
+    </button>
+  </div>
+</form>
+}

@@ -1,14 +1,14 @@
 import { Component, inject, signal } from '@angular/core';
+import { EditPostComponent } from '../../edit-post-component/edit-post-component';
 import { ActivatedRoute, RouterLink } from '@angular/router';
-import { ViewPostComponent } from '../../components/view-post-component/view-post-component';
 
 @Component({
-  selector: 'app-view-post-page',
-  imports: [ViewPostComponent, RouterLink],
-  templateUrl: './view-post-page.html',
-  styleUrl: './view-post-page.css',
+  selector: 'app-edit-post-page',
+  imports: [EditPostComponent, RouterLink],
+  templateUrl: './edit-post-page.html',
+  styleUrl: './edit-post-page.css',
 })
-export class ViewPostPage {
+export class EditPostPage {
   postId = signal(0);
   private route = inject(ActivatedRoute);
 

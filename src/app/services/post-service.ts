@@ -22,7 +22,7 @@ export class PostService {
   };
 
   updatePost = (payload: IPost) => {
-    return this.http.put<IPost>(`${this.apiUrl}/posts`, payload);
+    return this.http.put<IPost>(`${this.apiUrl}/posts/${payload.id}`, payload);
   };
 
   deletePost = (postId: number) => {
