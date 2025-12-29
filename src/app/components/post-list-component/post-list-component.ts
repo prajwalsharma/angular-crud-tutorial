@@ -26,4 +26,20 @@ export class PostListComponent implements OnInit {
       },
     });
   }
+
+  deletePostHandler = (postId: number) => {
+    if (postId > 0) {
+      const decision = confirm('Are you sure you want to delete this post?');
+      if (decision) {
+        this.postService.deletePost(postId).subscribe({
+          next: (res) => {
+            alert('Post deleted!');
+            const activePosts = this.posts()?.filter((post) => post.id !== postId);
+            this.posts.set(activePosts);
+          },
+          error: (err) => console.error(err),
+        });
+      }
+    }
+  };
 }
